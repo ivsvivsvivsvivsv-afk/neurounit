@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ c.meta.title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-bg">
+            <source src="/data/{{ c.hero.media }}" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="glitch" data-text="{{ c.hero.title }}">{{ c.hero.title }}</h1>
+            <p class="subtitle">> {{ c.hero.subtitle }}</p>
+            <div class="sys-msg">
+                <span>{{ c.hero.msg_1 }}</span>
+                <span class="hl">{{ c.hero.msg_2 }}</span>
+            </div>
+            <button class="btn-neon" onclick="scrollToId('game')">{{ c.hero.btn }}</button>
+        </div>
+    </section>
+
+    <section id="game" class="section">
+        <h2 class="title">{{ c.game.title }}</h2>
+        <div class="timer">00:<span id="g-timer">{{ c.game.timer_sec }}</span></div>
+        <div class="cards">
+            {% for card in c.game.cards %}
+            <div class="card" onclick="checkClone(this, {{ 'true' if card.is_real else 'false' }})">
+                <div class="status err">{{ c.game.fail_msg }}</div>
+                <div class="status succ">{{ c.game.success_msg }}</div>
+                <video src="/data/{{ card.file }}" loop muted onmouseover="this.play()" onmouseout="this.pause()"></video>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="title">{{ c.stats.title }}</h2>
+        <div class="stats-row">
+            {% for item in c.stats.items %}
+            <div class="stat">
+                <div class="val">{{ item.val }}</div>
+                <div class="desc">{{ item.text }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="iron-man">
+        <div class="sticky-wrap">
+            <div class="layers">
+                {% for layer in c.iron.layers %}
+                <div class="layer layer-{{ loop.index }}">
+                    <img src="/data/{{ layer.file }}" alt="Layer">
+                    <div class="caption">
+                        <h3>{{ layer.title }}</h3>
+                        <p>{{ layer.desc }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="scroll-hint">{{ c.iron.scroll_hint }}</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="title">{{ c.terminal.title }}</h2>
+        <div class="term-box">
+            <div class="term-head">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span> {{ c.terminal.head }}
+            </div>
+            <div class="term-body" id="term-out">
+                <div><span class="usr">user@unit:~$</span> ...</div>
+            </div>
+            <button class="btn-sec" onclick="runTerm()">{{ c.terminal.btn }}</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="title">{{ c.gen.title }}</h2>
+        <div class="gen-box">
+            <label>{{ c.gen.lbl_1 }}</label>
+            <input type="text" id="g-topic" placeholder="Python...">
+            <label>{{ c.gen.lbl_2 }}</label>
+            <select id="g-lvl">{% for l in c.gen.levels %}<option>{{ l }}</option>{% endfor %}</select>
+            <button class="btn-neon" onclick="runGen()">{{ c.gen.btn }}</button>
+            <textarea id="g-res" readonly></textarea>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="offer-card">
+            <h2 class="title neon">{{ c.offer.title }}</h2>
+            <ul class="feats">{% for f in c.offer.feats %}<li>{{ f }}</li>{% endfor %}</ul>
+            <div class="price">
+                <span class="old">{{ c.offer.price_old }}</span>
+                <span class="new">{{ c.offer.price_new }}</span>
+            </div>
+            <div class="alert">{{ c.offer.timer_lbl }} <span id="o-timer">15:00</span></div>
+            <form id="lead-form">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <button type="submit" class="btn-neon">{{ c.offer.form_btn }}</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const LOGS = {{ c.terminal.logs | tojson }};
+        const GAME_ALERT = "{{ c.game.alert_success }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
