@@ -1,0 +1,46 @@
+:root { --bg: #050510; --neon: #00F0FF; --err: #FF2050; --gold: #FFAA00; --font-h: 'Unbounded', sans-serif; --font-c: 'JetBrains Mono', monospace; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* COMPONENTS */
+.btn-neon { background: var(--neon); color: #000; border: none; padding: 15px 40px; font-family: var(--font-h); font-weight: 800; cursor: pointer; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), 0 100%, 0 10px); transition: 0.3s; width: 100%; }
+.btn-neon:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--neon); }
+.title { font-family: var(--font-h); font-size: 2.5rem; text-align: center; margin-bottom: 40px; }
+.section { padding: 80px 20px; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+
+/* HERO */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: -1; }
+.hero-content { text-align: center; padding: 20px; z-index: 2; max-width: 800px; }
+.glitch { font-size: clamp(40px, 6vw, 100px); font-family: var(--font-h); line-height: 1; margin-bottom: 20px; }
+.subtitle { color: var(--neon); font-family: var(--font-c); letter-spacing: 2px; }
+.sys-msg { background: rgba(0,0,0,0.8); border-left: 3px solid var(--neon); padding: 20px; margin: 30px auto; text-align: left; font-family: var(--font-c); }
+.hl { color: var(--neon); display: block; margin-top: 5px; }
+
+/* GAME */
+.cards { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.card { width: 300px; height: 500px; border: 2px solid #333; position: relative; cursor: pointer; background: #000; overflow: hidden; }
+.card video { width: 100%; height: 100%; object-fit: cover; }
+.status { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: var(--font-h); font-size: 1.5rem; background: rgba(0,0,0,0.9); text-align: center; z-index: 10; }
+.err { color: var(--err); border: 4px solid var(--err); }
+.succ { color: var(--neon); border: 4px solid var(--neon); }
+
+/* IRON MAN */
+.iron-man { height: 300vh; position: relative; background: #000; }
+.sticky-wrap { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.layers { position: relative; width: 400px; height: 700px; }
+.layer { position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s; display: flex; flex-direction: column; align-items: center; }
+.layer img { width: 100%; height: 100%; object-fit: contain; }
+.caption { position: absolute; bottom: 50px; background: rgba(0,0,0,0.9); padding: 15px; border: 1px solid #333; text-align: center; width: 100%; }
+
+/* TERMINAL & GEN */
+.term-box, .gen-box, .offer-card { background: #0d1117; border: 1px solid #333; padding: 20px; border-radius: 10px; width: 100%; max-width: 600px; margin: 0 auto; }
+.term-body { height: 250px; overflow-y: auto; font-family: var(--font-c); color: #ccc; margin: 15px 0; }
+.usr { color: var(--neon); }
+input, select, textarea { width: 100%; background: #000; border: 1px solid #333; color: #fff; padding: 15px; margin-bottom: 15px; }
+
+/* OFFER */
+.price { font-size: 3rem; font-family: var(--font-h); margin: 20px 0; }
+.old { text-decoration: line-through; color: #666; font-size: 1.5rem; margin-right: 15px; }
+.alert { color: var(--err); font-family: var(--font-c); margin-bottom: 20px; }
+#matrix { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.15; }
