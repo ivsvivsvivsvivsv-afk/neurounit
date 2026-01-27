@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "НЕЙРО-ЮНИТ | Трансформация"
+  },
+  "hero": {
+    "title": "НЕЙРО-ЮНИТ",
+    "subtitle": "НОВАЯ ЭРА ОБРАЗОВАНИЯ АКТИВИРОВАНА",
+    "msg_1": "[СИСТЕМНОЕ СООБЩЕНИЕ]: Оставайтесь до конца.",
+    "msg_2": "Первые 10 участников получат скидку 90%.",
+    "btn": "АКТИВИРОВАТЬ СИСТЕМУ",
+    "media": "hero_bg.mp4",
+    "_prompt": "Cinematic fly-through in dark blue cyberspace, glowing neon neural network nodes, data streams, futuristic HUD interface, 8k resolution, seamless loop."
+  },
+  "game": {
+    "title": "ТЕСТ ТЬЮРИНГА",
+    "timer_sec": 60,
+    "success_msg": "ДОСТУП РАЗРЕШЕН: ЧЕЛОВЕК",
+    "fail_msg": "ОШИБКА: ОБНАРУЖЕН ИИ",
+    "alert_success": "СИСТЕМА: Человек подтвержден. Скидка зафиксирована.",
+    "cards": [
+      { "file": "video_fake_1.mp4", "is_real": false, "_prompt": "HeyGen Avatar talking. Use 'Expressive' mode for slight uncanny valley." },
+      { "file": "video_real.mp4", "is_real": true, "_prompt": "Real human video recording or high-quality generation." },
+      { "file": "video_fake_2.mp4", "is_real": false, "_prompt": "HeyGen Avatar. Add lip-sync error." }
+    ]
+  },
+  "stats": {
+    "title": "МИР ИЗМЕНИЛСЯ",
+    "items": [
+      { "val": "100M", "text": "Пользователей ChatGPT за 2 месяца" },
+      { "val": "85M", "text": "Рабочих мест исчезнет к 2025" },
+      { "val": "300M", "text": "Под угрозой (Goldman Sachs)" }
+    ]
+  },
+  "iron": {
+    "scroll_hint": "ЛИСТАЙ ВНИЗ ↓",
+    "layers": [
+      {
+        "title": "УРОВЕНЬ 1: ТЫ",
+        "desc": "Твой мозг, опыт и амбиции.",
+        "file": "layer_1.png",
+        "_prompt": "Silhouette of a man standing, confident pose, dark cyberpunk background --no background"
+      },
+      {
+        "title": "УРОВЕНЬ 2: НЕЙРОСКЕЛЕТ",
+        "desc": "ChatGPT, Perplexity, Veo3.",
+        "file": "layer_2.png",
+        "_prompt": "Futuristic wireframe blueprint of an exoskeleton suit overlaying a human body, technical schematic style --no background"
+      },
+      {
+        "title": "УРОВЕНЬ 3: НЕЙРО-ЮНИТ",
+        "desc": "Суперсила: Критическое мышление + ИИ.",
+        "file": "layer_3.png",
+        "_prompt": "Full futuristic sci-fi armor suit, neon blue and gold details, high tech Iron Man style --no background"
+      }
+    ]
+  },
+  "terminal": {
+    "title": "СБОР ДАННЫХ",
+    "head": "perplexity_pro.exe",
+    "btn": "[ ЗАПУСТИТЬ ПОИСК: GOOGLE VEO3 ]",
+    "logs": [
+      "> Connecting to Neural Network...",
+      "> Searching: 'Google Veo3 specs'...",
+      "> Scanning 14,200 sources...",
+      "> Filtering hallucinations...",
+      "<br><span style='color:#fff'>RESULT:</span> Google Veo3 — GenAI Video Model.",
+      "Status: Beta. Resolution: 1080p.",
+      "<span style='background:#00F0FF; color:black'>[DATASET COMPILED IN 1.2S]</span>"
+    ]
+  },
+  "gen": {
+    "title": "КОНСТРУКТОР ПЕДАГОГА",
+    "lbl_1": "ТЕМА",
+    "lbl_2": "УРОВЕНЬ",
+    "btn": "СГЕНЕРИРОВАТЬ ПРОМТ",
+    "levels": ["Новичок", "Средний", "Профи"]
+  },
+  "offer": {
+    "title": "НЕЙРОСКЕЛЕТ",
+    "feats": [
+      "✅ 10 ИИ-педагогов",
+      "✅ База знаний NotebookLM",
+      "✅ Продвинутый фактчекинг",
+      "🎁 Бонус: Модуль Veo3 Mastery"
+    ],
+    "price_old": "29,990 ₽",
+    "price_new": "2,990 ₽",
+    "timer_lbl": "ПРЕДЛОЖЕНИЕ ИСЧЕЗНЕТ ЧЕРЕЗ:",
+    "form_btn": "ТРАНСФОРМИРОВАТЬСЯ"
+  }
+}
